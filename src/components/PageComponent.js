@@ -12,7 +12,7 @@ const PageComponent = (props) => {
 
     const getItemList = async() => {
 
-        const response = await fetch('https://todorick.herokuapp.com/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/page/'+page_id, {
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -37,7 +37,7 @@ const PageComponent = (props) => {
             }
         }
         console.log(newData)
-        const response = await fetch('https://todorick.herokuapp.com/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/page/'+page_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -52,7 +52,7 @@ const PageComponent = (props) => {
     }
 
     const clearList = async() => {
-        const response = await fetch('https://todorick.herokuapp.com/clear/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/page/clear/'+page_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -66,7 +66,7 @@ const PageComponent = (props) => {
 
     const xButton = async(e) => {
         const button_id = e.target.id
-        const response = await fetch('https://todorick.herokuapp.com/clearIndex/'+page_id+'/'+button_id, {
+        const response = await fetch('https://todorick.herokuapp.com/page/clearIndex/'+page_id+'/'+button_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -100,7 +100,7 @@ const PageComponent = (props) => {
             <div class="col-sm-12">
                 <ul class="list-group">
                     <li class="list-group-item">{item.taskName}<button type="button" class="btn btn-danger float-right" id={idCounter} onClick={e=>xButton(e)}>X</button></li>
-                  </ul>
+                </ul>
             </div>
         </div>
         })}
