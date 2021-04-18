@@ -12,7 +12,7 @@ const PageComponent = (props) => {
 
     const getItemList = async() => {
 
-        const response = await fetch('http://localhost:5000/page/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/'+page_id, {
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -37,7 +37,7 @@ const PageComponent = (props) => {
             }
         }
         console.log(newData)
-        const response = await fetch('http://localhost:5000/page/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/'+page_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -52,7 +52,7 @@ const PageComponent = (props) => {
     }
 
     const clearList = async() => {
-        const response = await fetch('http://localhost:5000/page/clear/'+page_id, {
+        const response = await fetch('https://todorick.herokuapp.com/clear/'+page_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -66,7 +66,7 @@ const PageComponent = (props) => {
 
     const xButton = async(e) => {
         const button_id = e.target.id
-        const response = await fetch('http://localhost:5000/page/clearIndex/'+page_id+'/'+button_id, {
+        const response = await fetch('https://todorick.herokuapp.com/clearIndex/'+page_id+'/'+button_id, {
             method: 'POST',
             mode: 'cors',
             headers: {
