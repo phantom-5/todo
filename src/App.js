@@ -2,7 +2,7 @@ import './App.css'
 import PageComponent from './components/PageComponent'
 import Home from './components/Home'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-
+// Start Script
 
 function App() {
   return (
